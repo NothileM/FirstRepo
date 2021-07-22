@@ -1,0 +1,15 @@
+ declare @outText2        varchar(100) ,
+@status2            bit
+
+ exec uspSelectClientName
+@siteID            ='FB188D51-EB3C-416E-8971-6D9A8F80D675',
+@employeeCode    ='00005846',
+@outText        =@outText2 out,
+@status           =@status2 out
+select @outText2, @status2
+
+ GO
+
+update employeeImportClientMap set
+changeDate =getdate(), FK_UsersID = '59AC7915-9F02-4C1C-BA20-87C86421E9F3', inUse =1;
+go
